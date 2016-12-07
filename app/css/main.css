@@ -2,14 +2,13 @@
 @import 'common/layout';
 @import 'common/typography';
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Concert+One|Lato);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css);
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: var(--fontMontserrat);
 }
 
 .app {
