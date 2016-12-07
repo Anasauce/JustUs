@@ -1,23 +1,26 @@
 
 :root {
 
-  --fontMontserrat:           'Montserrat', Helvetica, Arial, sans-serif;
+  --fontConcertOne: 'Concert One', cursive;
+  --fontLato: 'Lato', sans-serif;
 
-  --fontSmall:                12px;
-  --fontMedium:               16px;
-  --fontLarge:                21px;
-  --fontHuge:                 28px;
+  --fontSmall: 12px;
+  --fontMedium: 16px;
+  --fontLarge: 21px;
+  --fontHuge: 28px;
 
   --heading {
-    font-size: 28px;
+    font-family: var(--fontConcertOne);
+    font-size: 45px;
     font-weight: 700;
     line-height: 48px;
   }
 
   --subHeading {
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 24px;
+    font-family: var(--fontLato);
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 28px;
   }
 
   --normal {

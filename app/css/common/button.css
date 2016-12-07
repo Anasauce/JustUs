@@ -18,7 +18,6 @@
   }
 
   --greenButton {
-    @apply --button;
     color: var(--colorWhite);
     background: var(--colorSalem);
     border-color: var(--colorSalem);

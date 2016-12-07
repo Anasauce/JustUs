@@ -13,16 +13,16 @@ const cx = classNames.bind(styles);
 const About = () => {
   return (
     <div className={cx('about')}>
-      <h1 className={cx('header')}>JustUs</h1>
-      <div className={cx('description')}>
-        <p>Safe solutions for when you need help.</p>
+      <div className={cx('about__info-section-1')}>
+        <h1 className={cx('header')}>JustUs</h1>
+        <p className={cx('description')}>Safe solutions for when you need help.</p>
+        <Button href="/" className={cx('button', 'about__button')}>Find Resources Now</Button>
       </div>
-
-      <Button href="/" className={cx('btn-primary')}>Find Resources Now</Button>
-      <div className={cx('section-2')}></div>
-      <div className={cx('contribute')}>
-        <h1>What is Just Us?</h1>
-        <p>A forum for alternatives to Calling police in crisis situations.</p>
+      <div className={cx('about__image-section')}></div>
+      <div className={cx('about__info-section-1')}>
+        <h1 className={cx('header')}>What is JustUs?</h1>
+        <p className={cx('description')}>
+        A forum for alternatives to Calling police in crisis situations.</p>
       </div>
     </div>
   );
