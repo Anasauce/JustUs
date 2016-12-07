@@ -1,170 +1,43 @@
-# reactGo
+# JustUs
+# Build a Mobile App That Would Provide Resources for People Going Through a Medical or Mental Health Crisis
 
-[![Dependency Status][dep-status-img]][dep-status-link] [![devDependency Status][dev-dep-status-img]][dev-dep-status-link]
-[![Gitter][gitter-img]][gitter-link] [![npm version][npm-badge]][npm-link]
+![image](https://cloud.githubusercontent.com/assets/6962945/19588815/0c66389a-971d-11e6-890c-bbaf1d739fa4.png)
+## Description
+- Give people alternatives to calling 911 when they, or someone around them are in particular types of crisis 
+- Work towards decoupling access to health care from policing
+- This information would be provided via crowdsourcing resources for trained responders(not police) from communities directly
+## User Story
+- This would be a mobile app that would have two parts:
+- First is a forum that would allow users to share resources. Other users can comment as well as and up vote, or down vote, different suggestions for resources.
+- Second is a section that users can easily access when in crisis, with the click of a button. When needed, the top 3-5 up-voted resources are rendered, along with phone numbers for easy access in an emergency.
+- Our application would use location services to connect users to the forums, and reasources for their regional area
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+![image](https://cloud.githubusercontent.com/assets/6962945/19588862/602af254-971d-11e6-92ea-c24f4a67551c.png)
+## Context
+#### I believe this goal has many specs that need to be flushed out before it is in a state to be to work on.
 
-> Your One-Stop solution for a full-stack app with ES6/ES2015 React.js featuring universal Redux, React Router, React Router Redux Hot reloading, CSS modules, Express 4.x, and multiple ORMs. :rocket:
+There is a lot of work needed to more clearly define user stories and understand the technical stack needed to build this application. I propose that those of us who are interested on working on this goal and getting it out of draft set a time to meet to work on:
+- [ ] Reaching out to already existing groups that are organizing on this issue to partner with:  http://criticalresistance.org/chapters/cr-oakland/the-oakland-power-projects/
+  https://occupypublichealth.wordpress.com/about/sfbayarea/ 
+  https://www.1degree.org/
 
-_Formerly known as choonkending/react-webpack-node_
+*\* Please offer up suggestions of other organizations that may be good to reach out to...
+- [ ] Clearly define technical stack that is needed to build this app: React native, some SQL DB, ORM Library, etc.
+- [ ] Level up our technical and programming skills in areas we have not worked in yet.
+## Specifications
 
-[dep-status-img]: https://david-dm.org/choonkending/react-webpack-node.svg
-[dep-status-link]: https://david-dm.org/choonkending/react-webpack-node
-[dev-dep-status-img]: https://david-dm.org/choonkending/react-webpack-node/dev-status.svg
-[dev-dep-status-link]: https://david-dm.org/choonkending/react-webpack-node#info=devDependencies
-[gitter-img]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-link]: https://gitter.im/choonkending/react-webpack-node?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-[npm-badge]: https://badge.fury.io/js/react-webpack-node.svg
-[npm-link]: http://badge.fury.io/js/react-webpack-node
+**\* Lets work together to define specs!
+### Required
 
+I would like the project to be open source. We would have to work to set up the project completely and define contribution guidelines and structure before goal is moved out of draft.
+- [ ] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
+## Quality Rubric
 
-#### Demo site:
+**\* Lets work together to define quality rubric in order to move this goal out of draft.
+### Please comment with feedback on this goal. If people are serious about building this application lets put in the time outside of LG hours to move this goal out of draft!
+---
 
-[https://react-webpack-node.herokuapp.com/](https://react-webpack-node.herokuapp.com/)
+<!-- LICENSE -->
 
-## Features:
-- ~~isomorphic~~ [**universal**](https://medium.com/@ghengeveld/isomorphism-vs-universal-javascript-4b47fb481beb#.4x2t3jlmx) Rendering
-- [**Redux**](https://github.com/reactjs/redux) Predictive state containers.
-- Server-side rendering with [**React Router**](https://github.com/reactjs/react-router) 2.x. Having server-side rendering allows you to pre-render the initial state of your components when a user (or search engine crawler) requests a page.
-- Integrating Redux with React Router with ~~Redux Simple Router~~ [React Router Redux](https://github.com/reactjs/react-router-redux)
-- Asynchronous Data Fetching on server-side rendering
-- Server side authentication + Redirecting for components
-- Hot reloading using [**react-transform-hmr**](https://github.com/gaearon/react-transform-hmr)
-- Time travel using [**Redux-Devtools Chrome Extension**](https://github.com/zalmoxisus/redux-devtools-extension)
-- [**Webpack**](https://github.com/webpack/webpack) for both development and production bundles. It's (in my opinion) the best bundler for JS, CSS, LESS, images, and lots more!
-- [**CSS Modules**](https://github.com/css-modules/css-modules) allows for modular and reusable CSS. Say goodbye to conflicts (most of them) and global scope
-
-- **Unit Testing** with webpack, karma, jsdom, mocha, sinon & enzyme
-	- Reducers
-	- Components ([Enzyme](http://airbnb.io/enzyme))
-	- Synchronous and Asynchronous Actions
-
-- Express 4.x server with a ton of middleware
-- Mongoose for MongoDB
-- Sequelize for Postgres
-- Procfile to enable deployment to Heroku & Docs on Salt configurations + Deployment for Digital Ocean
-
-
-## Motivation
-
-The motivation is simple: best practices and a wonderful development experience. Our ultimate goal is to provide a boilerplate for building non-trivial applications that are secure, performant and free of bugs. Believing a mixture of React.js, Webpack and Node was the best way to accomplish this, we created react-webpack-node.
-
-react-webpack-node also works great as a learning tool for anyone interested in learning how to implement a large React application, or those who want a modern setup ASAP.
-
-We've had extensive community additions to this boilerplate over time as practices have evolved, and are always interested in hearing new ideas or contributions.
-
-## Why Redux
-
-We're really big fans of this implementation of flux for state management. The main principles of having:
-- a single store
-- state being read-only (you have to express an intent to mutate being creating actions)
-- mutations written as pure functions
-
-make it very fun and easy to write **predictable** code! There's a ton of reasons why, but you should head to the [Redux docs](http://redux.js.org/index.html) to dive in!
-
-Or if you are more of a *visual learner* watch the free egghead video series narrated by the creator of redux:
-
-1. [Getting Started](https://egghead.io/series/getting-started-with-redux)
-2. [Building Idiomatically](https://egghead.io/series/building-react-applications-with-idiomatic-redux)
-
-#### Data Flow
-
-A simplistic representation of data flow from server to client is:
-
-```
-Express app.use() receives a request
--> Calls a pre-built webpack file for the server
--> Runs matching of routes in react-router for server
--> Makes async data fetching request
--> Renders Route component to string
--> Construct HTML file (with Meta, Link tags using helmet)
--> Browser receives html file with initial state
--> Client side React.JS kicks in and initializes with given state
--> Continues where it left off
--> Everyone is happy :)
-```
-
-More TBD
-
-#### Redux DevTools
-
-You will have to install redux devtools extension from [here](https://github.com/zalmoxisus/redux-devtools-extension) and then everything should just work!
-
-## Instructions
-
-#### Database
-
-We currently support MongoDB and Postgres, as well as the ability to not use any database. [Learn](docs/databases.md) about how to configure your app.
-
-#### Development
-
-Development is a breeze. Once you have installed all your dependencies all the configuration is done for you. using simple The process is outlined [here](docs/development.md).
-
-#### Unit Tests
-
-Testing with:
-- `karma` as test runner
-	- `karma.conf.js` for the main karma configuration (it has webpack configurations)
-	- `tests.webpack.js` which is the single entry file. It uses `webpack`'s require API to find all the files we need that have a `-test.js` suffix.
-- `mocha` as the test framework
-- `jsdom` as my test environment
-
-```bash
-# Run test once
-npm test
-
-# Run in watch mode
-npm test:watch
-```
-
-We have unit tests for async (redux) actions, reducers, and stateless components with [enzyme](http://airbnb.io/enzyme).
-
-#### Deployment
-
-Currently we support [Heroku](docs/deployment/Heroku.md) and [Digital Ocean](docs/deployment/DigitalOcean.md) and [AWS](docs/deployment/AWS.md)
-
-#### Roadmap
-We have an outline of our roadmap [here](https://github.com/reactGo/reactGo/blob/master/Roadmap.md)
-
-## Yeoman Generator
-If you like using yeoman generators, you could check out [this](https://github.com/iiegor/generator-react-webpack-node) cool yeoman generator by @iiegor!
-
-
-## FAQ
-
-We have assembled an FAQ [here](/docs/FAQ.md)
-
-## Check out what people have done
-
-We have a [list](/docs/apps.md) of projects that have been created with this boilerplate. Check
-them out to see what can be done or to get some inspiration.
-
-## How to Contribute:
-
-Best way to keep up to date is check the [issues](https://github.com/choonkending/react-webpack-node/issues). I really welcome improvements for **all aspects** of an app.
-
-1. Any suggestions/improvements/bugs can be in the form of Pull Requests, or creating an issue.
-2. Coding guidelines:
- - [Airbnb's Style Guide](https://github.com/airbnb/javascript)
- - [bendc's frontend guidelines](https://github.com/bendc/frontend-guidelines)
-
-
-Credits to [webpack-server-side-example](https://github.com/webpack/react-webpack-server-side-example), [example-app](https://github.com/webpack/example-app), [flux-examples](https://github.com/facebook/flux/tree/master/examples), [node-express-mongo-demo](https://github.com/madhums/node-express-mongoose-demo), [hackathon-starter](https://github.com/sahat/hackathon-starter/), [web-starter-kit](https://github.com/google/web-starter-kit), [awesome material-ui](https://github.com/callemall/material-ui), [alt and iso](https://github.com/goatslacker/iso/tree/master/examples/react-router-flux), [react-starter](https://github.com/webpack/react-starter), [reap](https://github.com/choonkending/reap), [isomorphic-redux-app](https://github.com/caljrimmer/isomorphic-redux-app) and [mxstbr/react-boilerplate](https://github.com/mxstbr/react-boilerplate/blob/master/README.md)
-
-**Easter Eggs** :egg:
-
-This boilerplate has gone through an evolution
-```
-React.js -> Facebook Flux -> Alt -> Redux
-```
-
-We have two implementations of universal flux:
-- **Redux** is on our active **master** branch
-- [**Alt**](https://github.com/goatslacker/alt) (previously implemented) on [flux/alt](https://github.com/choonkending/react-webpack-node/tree/flux/alt) branch. It features [iso](https://github.com/goatslacker/iso), react-router and ImmutableJS.
-
-> Note: If you have previously used an alt implementation of this repository, please refer to this branch. I will not be updating it as frequently as master, but definitely welcome suggestions!
-
-License
-===============
-MIT
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
