@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from 'css/components/about';
+import { Button } from 'react-bootstrap'
 
 const cx = classNames.bind(styles);
 
@@ -12,19 +13,16 @@ const cx = classNames.bind(styles);
 const About = () => {
   return (
     <div className={cx('about')}>
-      <h1 className={cx('header')}>About Ninja Ocean</h1>
+      <h1 className={cx('header')}>JustUs</h1>
       <div className={cx('description')}>
-        <p>Imagine an ocean of ninjas. Now think of it as a metaphor.<br />
-          Seriously, we love good tech. React, redux, scala, Haskell, machine learning, you name it!
-        </p>
+        <p>Safe solutions for when you need help.</p>
       </div>
+
+      <Button href="/" className={cx('btn-primary')}>Find Resources Now</Button>
+      <div className={cx('section-2')}></div>
       <div className={cx('contribute')}>
-        <p>Want to contribute? Help us out!
-          If you think the code on &nbsp;
-          <a target="_blank" href="https://github.com/choonkending/react-webpack-node">this repo</a>
-        &nbsp;could be improved, please create an issue&nbsp;
-          <a target="_blank" href="https://github.com/choonkending/react-webpack-node/issues">here</a>!
-        </p>
+        <h1>What is Just Us?</h1>
+        <p>A forum for alternatives to Calling police in crisis situations.</p>
       </div>
     </div>
   );
