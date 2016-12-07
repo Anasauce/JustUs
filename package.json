@@ -1,4 +1,4 @@
-{
+class{
   "name": "react-webpack-node",
   "version": "2.0.1",
   "description": "Your One-Stop solution for a full-stack app with ES6/ES2015 React.js featuring universal Redux, React Router, React Router Redux Hot reloading, CSS modules, Express 4.x, and multiple ORMs.",
@@ -100,6 +100,7 @@
     "postcss-reporter": "^1.4.1",
     "postcss-simple-vars": "^3.0.0",
     "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
     "react-helmet": "^3.2.2",
     "react-redux": "^4.4.5",
