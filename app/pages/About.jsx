@@ -20,12 +20,12 @@ class About extends Component {
   }
 
   pageTitle() {
-    return 'About | reactGo';
+    return 'About | JustUs';
   }
 
   pageMeta() {
     return [
-      { name: "description", content: "A reactGo example of life" }
+      { name: "description", content: "A tool for sharing police alternatives" }
     ];
   }
 

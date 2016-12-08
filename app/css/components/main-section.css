@@ -2,12 +2,6 @@
 @import '../common/typography';
 @import '../common/card';
 
-.main-section {
-  @apply --card;
-  width: 50%;
-  border-radius: var(--globalRadius);
-}
-
 .header {
   @apply --title;
   @apply --subHeading;
@@ -17,6 +11,4 @@
 
 .list {
   list-style: none;
-  padding: 16px;
 }
-

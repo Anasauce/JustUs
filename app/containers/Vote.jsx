@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import EntryBox from 'components/EntryBox';
-import MainSection from 'components/MainSection';
+import Feed from 'components/Feed';
 import Scoreboard from 'components/Scoreboard';
-import { createTopic, typing, incrementCount,
-  decrementCount, destroyTopic } from 'actions/topics';
+import { createResource, typing, incrementCount,
+  decrementCount, destroyResource } from 'actions/resources';
 import styles from 'css/components/vote';
 
 const cx = classNames.bind(styles);
@@ -13,39 +13,32 @@ const cx = classNames.bind(styles);
 class Vote extends Component {
 
   render() {
-    const {newTopic, topics, typing, createTopic, destroyTopic, incrementCount, decrementCount } = this.props;
+    const {newResource, resources, typing, createResource, destroyResource, incrementCount, decrementCount } = this.props;
     return (
       <div className={cx('vote')}>
-        <EntryBox topic={newTopic}
-          onEntryChange={typing}
-          onEntrySave={createTopic} />
-        <MainSection topics={topics}
-          onIncrement={incrementCount}
-          onDecrement={decrementCount}
-          onDestroy={destroyTopic} />
-        <Scoreboard topics={topics} />
+
       </div>
     );
   }
 }
 
 Vote.propTypes = {
-  topics: PropTypes.array.isRequired,
+  resources: PropTypes.array.isRequired,
   typing: PropTypes.func.isRequired,
-  createTopic: PropTypes.func.isRequired,
-  destroyTopic: PropTypes.func.isRequired,
+  createResource: PropTypes.func.isRequired,
+  destroyResource: PropTypes.func.isRequired,
   incrementCount: PropTypes.func.isRequired,
   decrementCount: PropTypes.func.isRequired,
-  newTopic: PropTypes.string
+  newResource: PropTypes.string
 };
 
 function mapStateToProps(state) {
   return {
-    topics: state.topic.topics,
-    newTopic: state.topic.newTopic
+    resources: state.resource.resources,
+    newResource: state.resource.newResource
   };
 }
 
 // Read more about where to place `connect` here:
 // https://github.com/rackt/react-redux/issues/75#issuecomment-135436563
-export default connect(mapStateToProps, { createTopic, typing, incrementCount, decrementCount, destroyTopic })(Vote);
+export default connect(mapStateToProps, { createResource, typing, incrementCount, decrementCount, destroyResource })(Vote);
