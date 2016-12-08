@@ -6,7 +6,6 @@ import styles from 'css/components/main-section';
 const cx = classNames.bind(styles);
 
 const MainSection = ({ resources, onIncrement, onDecrement, onDestroy }) => {
-const MainSection = ({ resources, onIncrement, onDecrement, onDestroy }) => {
   const resourceItems = resources.map((resource, key) => {
     return (
       <ResourceItem

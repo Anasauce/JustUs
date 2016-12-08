@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import EntryBox from 'components/EntryBox';
-import MainSection from 'components/MainSection';
+import Feed from 'components/Feed';
 import Scoreboard from 'components/Scoreboard';
 import { createResource, typing, incrementCount,
   decrementCount, destroyResource } from 'actions/resources';
@@ -16,7 +16,7 @@ class Vote extends Component {
     const {newResource, resources, typing, createResource, destroyResource, incrementCount, decrementCount } = this.props;
     return (
       <div className={cx('vote')}>
-        
+
       </div>
     );
   }

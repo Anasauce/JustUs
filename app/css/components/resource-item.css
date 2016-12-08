@@ -7,9 +7,12 @@
   justify-content: space-between;
 }
 
+.resource_card { 
+}
+
 .resource {
   @apply --flexNotMoreThan200;
-  font-size: var(--fontMedium);
+  font-size: var(--fontLato);
 }
 
 .button {
@@ -33,4 +36,3 @@
 .destroy {
   background-color: var(--colorPunch);
 }
-
