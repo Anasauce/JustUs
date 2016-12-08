@@ -16,7 +16,7 @@ const About = () => {
       <div className={cx('about__info-section-1')}>
         <h1 className={cx('header')}>JustUs</h1>
         <p className={cx('description')}>Safe solutions for when you need help.</p>
-        <Button href="/" className={cx('button', 'about__button')}>Find Resources Now</Button>
+        <Button href="/dashboard" className={cx('button', 'about__button')}>Find Resources Now</Button>
       </div>
       <div className={cx('about__image-section')}></div>
       <div className={cx('about__info-section-1')}>

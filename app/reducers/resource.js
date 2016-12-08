@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import * as types from 'types';
 
-const topic = (
+const resource = (
   state = {},
   action
 ) => {
   switch (action.type) {
-    case types.CREATE_TOPIC_REQUEST:
+    case types.CREATE_RESOURCE_REQUEST:
       return {
         id: action.id,
         count: action.count,
@@ -27,7 +27,7 @@ const topic = (
   }
 };
 
-const topics = (
+const resources = (
   state = [],
   action
 ) => {
@@ -35,37 +35,37 @@ const topics = (
     case types.REQUEST_SUCCESS:
       if (action.data) return action.data;
       return state;
-    case types.CREATE_TOPIC_REQUEST:
-      return [...state, topic(undefined, action)];
-    case types.CREATE_TOPIC_FAILURE:
+    case types.CREATE_RESOURCE_REQUEST:
+      return [...state, resource(undefined, action)];
+    case types.CREATE_RESOURCE_FAILURE:
       return state.filter(t => t.id !== action.id);
-    case types.DESTROY_TOPIC:
+    case types.DESTROY_RESOURCE:
       return state.filter(t => t.id !== action.id);
     case types.INCREMENT_COUNT:
     case types.DECREMENT_COUNT:
-      return state.map(t => topic(t, action));
+      return state.map(t => resource(t, action));
     default:
       return state;
   }
 };
 
-const newTopic = (
+const newResource = (
   state = '',
   action
 ) => {
   switch (action.type) {
     case types.TYPING:
-      return action.newTopic;
-    case types.CREATE_TOPIC_REQUEST:
+      return action.newResource;
+    case types.CREATE_RESOURCE_REQUEST:
       return '';
     default:
       return state;
   }
 };
 
-const topicReducer = combineReducers({
-  topics,
-  newTopic
+const resourceReducer = combineReducers({
+  resources,
+  newResource
 });
 
-export default topicReducer;
+export default resourceReducer;

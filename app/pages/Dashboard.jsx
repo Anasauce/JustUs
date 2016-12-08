@@ -20,7 +20,7 @@ class Dashboard extends Component {
   }
 
   pageTitle() {
-    return 'Dashboard | reactGo';
+    return 'Dashboard | JustUs';
   }
 
   pageMeta() {
@@ -35,4 +35,3 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
-
