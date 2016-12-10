@@ -23,11 +23,23 @@ export function destroy(id) {
 }
 
 
-export function typing(text) {
+export function typing(value, field ) {
+  console.log('typing action value: ', value, 'typing action field: ', field );
+
+
   return {
     type: types.TYPING,
-    newResource: text
-  };
+      newResource: {
+        name: value,
+        resource_type: value,
+        phone_number: value,
+        address: value,
+        website_url: value,
+        zipcode: value,
+        created_by: value,
+        description: value
+      }
+  }
 }
 
 /*
@@ -67,21 +79,28 @@ export function createResourceDuplicate() {
 // which will get executed by Redux-Thunk middleware
 // This function does not need to be pure, and thus allowed
 // to have side effects, including executing asynchronous API calls.
-export function createResource(text) {
-  return (dispatch, getState) => {
-    // If the text box is empty
-    if (text.trim().length <= 0) return;
+export function createResource(array) {
 
-    const id = md5.hash(text);
+  return (dispatch, getState) => {
+    if (array.length <= 0) return;
+
+    const id = md5.hash(array[0]);
     // Redux thunk's middleware receives the store methods `dispatch`
     // and `getState` as parameters
     const { resource } = getState();
     const data = {
-      count: 1,
       id,
-      text
+      name: array[0],
+      resource_type: array[1],
+      phone_number: array[2],
+      address: array[3],
+      website_url: array[4],
+      zipcode: array[5],
+      description: array[6],
+      service_region: array[7]
     };
 
+    console.log('data from action',data);
     // Conditional dispatch
     // If the resource already exists, make sure we emit a dispatch event
     if (resource.resources.filter(resourceItem => resourceItem.id === id).length > 0) {

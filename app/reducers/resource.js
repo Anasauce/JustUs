@@ -50,13 +50,16 @@ const resources = (
 };
 
 const newResource = (
-  state = '',
+  state = [],
   action
 ) => {
+  console.log(newResource);
   switch (action.type) {
     case types.TYPING:
+      console.log('typing reducer');
       return action.newResource;
     case types.CREATE_RESOURCE_REQUEST:
+      console.log('crr');
       return '';
     default:
       return state;

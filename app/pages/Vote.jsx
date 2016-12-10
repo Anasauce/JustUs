@@ -6,7 +6,7 @@ class Vote extends Component {
   render() {
     return (
       <Page {...this.getMetaData()}>
-        <VoteContainer {...this.props} />
+         <VoteContainer {...this.props} />
       </Page>
     );
   }
@@ -35,4 +35,3 @@ class Vote extends Component {
 }
 
 export default Vote;
-
