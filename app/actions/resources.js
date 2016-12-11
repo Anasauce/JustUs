@@ -87,9 +87,14 @@ export function typing(value, field ) {
 export function createResourceRequest(data) {
   return {
     type: types.CREATE_RESOURCE_REQUEST,
-    id: data.id,
-    count: data.count,
-    text: data.text
+    name: data.name,
+    resource_type: data.resource_type,
+    phone_number: data.phone_number,
+    address: data.address,
+    website_url: data.website_url,
+    zipcode: data.zipcode,
+    description: data.description,
+    service_region: data.service_region
   };
 }
 
@@ -120,22 +125,23 @@ export function createResourceDuplicate() {
 export function createResource(newResource) {
 
   return (dispatch, getState) => {
+    console.log('in create resource',Object.keys(newResource).length, '...>', newResource);
     if (Object.keys(newResource).length <= 0) return;
 
-    const id = md5.hash(array[0]);
+    const id = md5.hash(newResource.name);
     // Redux thunk's middleware receives the store methods `dispatch`
     // and `getState` as parameters
     const { resource } = getState();
     const data = {
       id,
       name: newResource.name,
-      resource_type: newResource.type,
-      phone_number: array[2],
-      address: array[3],
-      website_url: array[4],
-      zipcode: array[5],
-      description: array[6],
-      service_region: array[7]
+      resource_type: newResource.resource_type,
+      phone_number: newResource.phone_number,
+      address: newResource.address,
+      website_url: newResource.website_url,
+      zipcode: newResource.zipcode,
+      description: newResource.description,
+      service_region: newResource.service_region
     };
 
     // Conditional dispatch
@@ -149,7 +155,7 @@ export function createResource(newResource) {
 
     // First dispatch an optimistic update
     dispatch(createResourceRequest(data));
-
+    console.log("before makeResourceRequest");
     return makeResourceRequest('post', id, data)
       .then(res => {
         if (res.status === 200) {

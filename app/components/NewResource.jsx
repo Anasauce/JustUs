@@ -29,12 +29,13 @@ export default class NewResource extends React.Component {
     const { onEntryChange } = this.props;
     const value = event.target.value
     const field = event.target.id
+    console.log('value', value, 'field', field);
     onEntryChange(value, field);
   }
 
   onSubmit(event) {
-    console.log(event.type);
-    if (event.type === SUBMIT) {
+    console.log('submit',event);
+    if (event.type === 'submit') {
       this.onSave();
     }
   }
@@ -49,7 +50,7 @@ render(){
     <div className={cx('entrybox')}>
       <h1 className={cx('header')}>Vote for your top hack idea</h1>
 
-      <form>
+      <form onSubmit={this.onSubmit}>
              <FormGroup
                controlId="name"
                validationState={this.getValidationState()}
@@ -60,6 +61,7 @@ render(){
                  data-id='0'
                  value={newResource.name}
                  placeholder="Not the police..."
+                 onChange={this.onChange}
                />
                </FormGroup>
                <FormGroup
@@ -67,7 +69,7 @@ render(){
                  validationState={this.getValidationState()}
                >
                <ControlLabel>Resource Type</ControlLabel>
-                 <FormControl data-id='1' componentClass="select" value={newResource.resource_type} onChange={this.onChange} multiple >
+                 <FormControl data-id='1' componentClass="select" onChange={this.onChange} multiple >
                    <option value='crisis'>Crisis Number only</option>
                    <option value='responder'>First Responders</option>
                    <option value='medical'>Medical</option>
@@ -156,9 +158,9 @@ render(){
                      onChange={this.onChange}
                     />
                     </FormGroup>
-               <FormControl.Feedback />
+               <FormControl.Feedback/>
 
-             <Button type="submit" onSubmit={this.onSubmit}>Create Resource</Button>
+             <Button type="submit">Create Resource</Button>
            </form>
 
     </div>

@@ -53,7 +53,6 @@ const newResource = (
   state = {},
   action
 ) => {
-  console.log(action);
   switch (action.type) {
     case types.TYPING:
       return Object.assign({}, state, action.newResource)

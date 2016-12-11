@@ -14,7 +14,7 @@ class Vote extends Component {
 
   render() {
     const {newResource, resources, typing, createResource } = this.props;
-    console.log(newResource);
+    console.log('new resource in the vote render', newResource);
     return (
       <div className={cx('vote')}>
         <NewResource newResource={newResource} onEntryChange={typing} onEntrySave={createResource}/>
