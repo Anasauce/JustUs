@@ -27,7 +27,7 @@ Vote.propTypes = {
   resources: PropTypes.array.isRequired,
   typing: PropTypes.func.isRequired,
   createResource: PropTypes.func.isRequired,
-  newResource: PropTypes.array
+  newResource: PropTypes.object
 };
 
 function mapStateToProps(state) {

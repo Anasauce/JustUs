@@ -17,22 +17,24 @@ export default class NewResource extends React.Component {
     super(props);
     this.onSave = this.onSave.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSave(event) {
-    const { onEntrySave , newResource } = this.props;
+  onSave() {
+    const { onEntrySave, newResource  } = this.props;
     onEntrySave(newResource);
   }
 
-  onChange( field, event) {
+  onChange(event) {
     const { onEntryChange } = this.props;
     const value = event.target.value
+    const field = event.target.id
     onEntryChange(value, field);
   }
 
-  onKeyDown(event) {
-    if (event.keyCode === ENTER_KEY_CODE) {
+  onSubmit(event) {
+    console.log(event.type);
+    if (event.type === SUBMIT) {
       this.onSave();
     }
   }
@@ -49,17 +51,23 @@ render(){
 
       <form>
              <FormGroup
-               controlId="new_resource"
+               controlId="name"
                validationState={this.getValidationState()}
              >
                <ControlLabel>Resource Name</ControlLabel>
                <FormControl
                  type="text"
                  data-id='0'
+                 value={newResource.name}
                  placeholder="Not the police..."
                />
+               </FormGroup>
+               <FormGroup
+                 controlId="resource_type"
+                 validationState={this.getValidationState()}
+               >
                <ControlLabel>Resource Type</ControlLabel>
-                 <FormControl data-id='1' componentClass="select" multiple >
+                 <FormControl data-id='1' componentClass="select" value={newResource.resource_type} onChange={this.onChange} multiple >
                    <option value='crisis'>Crisis Number only</option>
                    <option value='responder'>First Responders</option>
                    <option value='medical'>Medical</option>
@@ -69,51 +77,88 @@ render(){
                    <option value='transport'>Emergency Transportation (no medical professionals)</option>
                    <option value='womens'>Women's Services</option>
                  </FormControl>
+                 </FormGroup>
+                 <FormGroup
+                   controlId="address"
+                   validationState={this.getValidationState()}
+                 >
                <ControlLabel>Address</ControlLabel>
                  <FormControl
                    type="text"
                    data-id='2'
                    placeholder="492 9th St Oakland Ca"
+                   value={newResource.address}
                    onChange={this.onChange}
                  />
+                 </FormGroup>
+                 <FormGroup
+                   controlId="phone_number"
+                   validationState={this.getValidationState()}
+                 >
                  <ControlLabel>PhoneNumber</ControlLabel>
                    <FormControl
                      type="text"
                      data-id='3'
+                     value={newResource.phone_number}
                      placeholder="510-629-6644"
-                     onChange={this.onChange.bind(this, '3', event)}
+                     onChange={this.onChange}
                    />
+                  </FormGroup>
+                  <FormGroup
+                    controlId="website_url"
+                    validationState={this.getValidationState()}
+                  >
                  <ControlLabel>Website Url</ControlLabel>
                    <FormControl
                      type="text"
                      data-id='4'
+                     value={newResource.website_url}
                      placeholder="www.dontcallthecops.com"
-                     onChange={onEntryChange}
+                     onChange={this.onChange}
                    />
+                   </FormGroup>
+                   <FormGroup
+                     controlId="zipcode"
+                     validationState={this.getValidationState()}
+                   >
                  <ControlLabel>ZipCode</ControlLabel>
                    <FormControl
                      type="text"
                      data-id='5'
+                     value={newResource.zipcode}
                      placeholder="94619"
-                     onChange={onEntryChange}
+                     onChange={this.onChange}
                    />
+                   </FormGroup>
+                   <FormGroup
+                     controlId="description"
+                     validationState={this.getValidationState()}
+                   >
                  <ControlLabel>Description</ControlLabel>
                    <FormControl
                      type="textArea"
                      data-id='6'
+                     value={newResource.description}
                      placeholder="Describe this resource in detail"
-                     onChange={onEntryChange}
+                     onChange={this.onChange}
                    />
+                   </FormGroup>
+                   <FormGroup
+                     controlId="service_region"
+                     validationState={this.getValidationState()}
+                   >
                  <ControlLabel>Service Region </ControlLabel>
                    <FormControl
                      type="text"
                      data-id='7'
+                     value={newResource.service_region}
                      placeholder="Alameda County"
-                     onChange={onEntryChange}
+                     onChange={this.onChange}
                     />
+                    </FormGroup>
                <FormControl.Feedback />
-             </FormGroup>
-             <Button type="submit" >Create Resource</Button>
+
+             <Button type="submit" onSubmit={this.onSubmit}>Create Resource</Button>
            </form>
 
     </div>
@@ -122,7 +167,7 @@ render(){
 };
 
 NewResource.propTypes = {
-  newResource: PropTypes.array,
+  newResource: PropTypes.object,
   onEntryChange: PropTypes.func.isRequired,
   onEntrySave: PropTypes.func.isRequired
 };

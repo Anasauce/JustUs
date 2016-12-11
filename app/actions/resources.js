@@ -10,13 +10,6 @@ export function makeResourceRequest(method, id, data, api = '/resource') {
   return request[method](api + (id ? ('/' + id) : ''), data);
 }
 
-export function increment(id) {
-  return { type: types.INCREMENT_COUNT, id };
-}
-
-export function decrement(id) {
-  return { type: types.DECREMENT_COUNT, id };
-}
 
 export function destroy(id) {
   return { type: types.DESTROY_RESOURCE, id };
@@ -24,21 +17,66 @@ export function destroy(id) {
 
 
 export function typing(value, field ) {
-  console.log('typing action value: ', value, 'typing action field: ', field );
+  switch (field) {
+    case 'name':
+      console.log('changing name field');
+      return {
+         type: types.TYPING,
+         newResource: {name: value}
+       }
+      break;
+    case 'address':
+      console.log('changing address field');
+      return {
+         type: types.TYPING,
+         newResource: {address: value}
+       }
+      break;
+    case 'resource_type':
+      console.log('changing resource_type field');
+      return {
+         type: types.TYPING,
+         newResource: {resource_type: value}
+       }
+      break;
+    case 'website_url':
+      console.log('changing website_url field');
+      return {
+         type: types.TYPING,
+         newResource: {website_url: value}
+       }
+      break;
+    case 'phone_number':
+      console.log('changing phone_number field');
+      console.log(value.typeof);
+      return {
+         type: types.TYPING,
+         newResource: {phone_number: value}
+       }
+      break;
+    case 'zipcode':
+      console.log('changing zipcode field');
+      return {
+         type: types.TYPING,
+         newResource: {zipcode: value}
+       }
+      break;
+    case 'service_region':
+      console.log('changing service_region field');
+      return {
+         type: types.TYPING,
+         newResource: {service_region: value}
+       }
+      break;
+    case 'description':
+      console.log('changing description field');
+      return {
+         type: types.TYPING,
+         newResource: {description: value}
+       }
+      break;
+    default:
 
-
-  return {
-    type: types.TYPING,
-      newResource: {
-        name: value,
-        resource_type: value,
-        phone_number: value,
-        address: value,
-        website_url: value,
-        zipcode: value,
-        created_by: value,
-        description: value
-      }
   }
 }
 
@@ -79,10 +117,10 @@ export function createResourceDuplicate() {
 // which will get executed by Redux-Thunk middleware
 // This function does not need to be pure, and thus allowed
 // to have side effects, including executing asynchronous API calls.
-export function createResource(array) {
+export function createResource(newResource) {
 
   return (dispatch, getState) => {
-    if (array.length <= 0) return;
+    if (Object.keys(newResource).length <= 0) return;
 
     const id = md5.hash(array[0]);
     // Redux thunk's middleware receives the store methods `dispatch`
@@ -90,8 +128,8 @@ export function createResource(array) {
     const { resource } = getState();
     const data = {
       id,
-      name: array[0],
-      resource_type: array[1],
+      name: newResource.name,
+      resource_type: newResource.type,
       phone_number: array[2],
       address: array[3],
       website_url: array[4],
@@ -100,7 +138,6 @@ export function createResource(array) {
       service_region: array[7]
     };
 
-    console.log('data from action',data);
     // Conditional dispatch
     // If the resource already exists, make sure we emit a dispatch event
     if (resource.resources.filter(resourceItem => resourceItem.id === id).length > 0) {
