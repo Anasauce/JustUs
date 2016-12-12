@@ -6,7 +6,8 @@ import Feed from 'components/Feed';
 import Scoreboard from 'components/Scoreboard';
 import { createResource, typing, incrementCount,
   decrementCount, destroyResource } from 'actions/resources';
-import styles from 'css/components/vote';
+import styles from 'css/components/dashboard';
+import { Button, Jumbotron } from 'react-bootstrap';
 
 const cx = classNames.bind(styles);
 
@@ -15,8 +16,14 @@ class Dashboard extends Component {
   render() {
     const { resources } = this.props;
     return (
-      <div className={cx('dashboard')}>
-        <Feed resources={ resources } />
+      <div>
+        <div className={cx('dashboard')}>
+          <div className={cx('dashboard-header')}>
+            <h1 className={cx('header')}>Oakland</h1>
+            <Button className={cx('button')}>Add Resource</Button>
+          </div>
+        </div>
+          <Feed resources={ resources } />
       </div>
     );
   }

@@ -2,12 +2,43 @@
 @import '../common/colors';
 @import '../common/layout';
 
-.resource-item {
-  display: flex;
-  justify-content: space-between;
+
+.resource_card {
+  font-family: var(--fontLato);
+  padding: 15px;
+  margin-bottom: 0px;
+  background-color: #fff;
+  border-bottom: thin #000;
+  border-bottom-style: solid;
 }
 
-.resource_card { 
+.resource_header {
+  font-size: 21px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 50%;
+}
+
+.resource_phone {
+  font-size: var(--fontMedium);
+  font-weight: 200;
+  margin-bottom: 0px;
+}
+
+.resource_main_info {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.resource_decription, .resource_website {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 8px;
 }
 
 .resource {
@@ -15,23 +46,6 @@
   font-size: var(--fontLato);
 }
 
-.button {
-  font-size: var(--fontMedium);
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: none;
-  margin: 0 28px;
-  color: #fff;
-}
-
-.increment {
-  background-color: var(--colorSalem);
-}
-
-.decrement {
-  background-color: var(--colorDodgerBlue);
-}
 
 .destroy {
   background-color: var(--colorPunch);

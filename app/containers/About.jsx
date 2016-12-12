@@ -21,8 +21,7 @@ const About = () => {
       <div className={cx('about__image-section')}></div>
       <div className={cx('about__info-section-1')}>
         <h1 className={cx('header')}>What is JustUs?</h1>
-        <p className={cx('description')}>
-        A forum for alternatives to Calling police in crisis situations.</p>
+        <p className={cx('description')}>A forum for alternatives to Calling police in crisis situations.</p>
       </div>
     </div>
   );

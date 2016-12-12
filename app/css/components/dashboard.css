@@ -1,0 +1,30 @@
+@import '../common/colors';
+@import '../common/button';
+@import '../common/typography';
+
+.dashboard {
+  
+  border-bottom: thin #000;
+  border-bottom-style: solid;
+}
+
+.dashboard-header {
+  text-align: center;
+  padding: 30px;
+}
+
+.header {
+  @apply --subHeading;
+  font-weight: 700;
+  font-size: 45px;
+  padding-bottom: 10px;
+}
+
+.button {
+  @apply --greenButton;
+}
+
+.add-resource-button {
+  text-align: center;
+  padding: 15px;
+}
