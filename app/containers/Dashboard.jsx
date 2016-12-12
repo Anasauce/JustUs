@@ -20,7 +20,7 @@ class Dashboard extends Component {
         <div className={cx('dashboard')}>
           <div className={cx('dashboard-header')}>
             <h1 className={cx('header')}>Oakland</h1>
-            <Button className={cx('button')}>Add Resource</Button>
+            <Button href="/new_resource" className={cx('button')}>Add Resource</Button>
           </div>
         </div>
           <Feed resources={ resources } />

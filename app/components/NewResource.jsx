@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import ResourceTextInput from 'components/ResourceTextInput';
 import classNames from 'classnames/bind';
-import styles from 'css/components/entrybox';
+import styles from 'css/components/new-resource';
 import { FormGroup , ControlLabel , FormControl, HelpBlock, Button } from 'react-bootstrap'
 
 const cx = classNames.bind(styles);
@@ -48,120 +48,122 @@ render(){
   const { newResource, onEntryChange, onEntrySave } = this.props
   return (
     <div className={cx('entrybox')}>
-      <h1 className={cx('header')}>Vote for your top hack idea</h1>
-
-      <form onSubmit={this.onSubmit}>
-             <FormGroup
-               controlId="name"
-               validationState={this.getValidationState()}
-             >
-               <ControlLabel>Resource Name</ControlLabel>
-               <FormControl
-                 type="text"
-                 data-id='0'
-                 value={newResource.name}
-                 placeholder="Not the police..."
-                 onChange={this.onChange}
-               />
-               </FormGroup>
+      <h1 className={cx('resource_header')}>Add a Resource</h1>
+      <div className={cx('formEntry')}>
+        <form onSubmit={this.onSubmit}>
                <FormGroup
-                 controlId="resource_type"
+                 controlId="name"
                  validationState={this.getValidationState()}
                >
-               <ControlLabel>Resource Type</ControlLabel>
-                 <FormControl data-id='1' componentClass="select" onChange={this.onChange} multiple >
-                   <option value='crisis'>Crisis Number only</option>
-                   <option value='responder'>First Responders</option>
-                   <option value='medical'>Medical</option>
-                   <option value='fire'>Fire</option>
-                   <option value='psych'>Mental Health</option>
-                   <option value='conflict'>Conflict Resolution</option>
-                   <option value='transport'>Emergency Transportation (no medical professionals)</option>
-                   <option value='womens'>Women's Services</option>
-                 </FormControl>
-                 </FormGroup>
-                 <FormGroup
-                   controlId="address"
-                   validationState={this.getValidationState()}
-                 >
-               <ControlLabel>Address</ControlLabel>
+                 <ControlLabel>Resource Name</ControlLabel>
                  <FormControl
                    type="text"
-                   data-id='2'
-                   placeholder="492 9th St Oakland Ca"
-                   value={newResource.address}
+                   data-id='0'
+                   value={newResource.name}
+                   placeholder="Not the police..."
                    onChange={this.onChange}
                  />
                  </FormGroup>
                  <FormGroup
-                   controlId="phone_number"
+                   controlId="resource_type"
                    validationState={this.getValidationState()}
                  >
-                 <ControlLabel>PhoneNumber</ControlLabel>
+                 <ControlLabel>Resource Type</ControlLabel>
+                   <FormControl data-id='1' componentClass="select" onChange={this.onChange} multiple >
+                     <option value='crisis'>Crisis Number only</option>
+                     <option value='responder'>First Responders</option>
+                     <option value='medical'>Medical</option>
+                     <option value='fire'>Fire</option>
+                     <option value='psych'>Mental Health</option>
+                     <option value='conflict'>Conflict Resolution</option>
+                     <option value='transport'>Emergency Transportation (no medical professionals)</option>
+                     <option value='womens'>Women's Services</option>
+                   </FormControl>
+                   </FormGroup>
+                   <FormGroup
+                     controlId="address"
+                     validationState={this.getValidationState()}
+                   >
+                 <ControlLabel>Address</ControlLabel>
                    <FormControl
                      type="text"
-                     data-id='3'
-                     value={newResource.phone_number}
-                     placeholder="510-629-6644"
-                     onChange={this.onChange}
-                   />
-                  </FormGroup>
-                  <FormGroup
-                    controlId="website_url"
-                    validationState={this.getValidationState()}
-                  >
-                 <ControlLabel>Website Url</ControlLabel>
-                   <FormControl
-                     type="text"
-                     data-id='4'
-                     value={newResource.website_url}
-                     placeholder="www.dontcallthecops.com"
+                     data-id='2'
+                     placeholder="492 9th St Oakland Ca"
+                     value={newResource.address}
                      onChange={this.onChange}
                    />
                    </FormGroup>
                    <FormGroup
-                     controlId="zipcode"
+                     controlId="phone_number"
                      validationState={this.getValidationState()}
                    >
-                 <ControlLabel>ZipCode</ControlLabel>
-                   <FormControl
-                     type="text"
-                     data-id='5'
-                     value={newResource.zipcode}
-                     placeholder="94619"
-                     onChange={this.onChange}
-                   />
-                   </FormGroup>
-                   <FormGroup
-                     controlId="description"
-                     validationState={this.getValidationState()}
-                   >
-                 <ControlLabel>Description</ControlLabel>
-                   <FormControl
-                     type="textArea"
-                     data-id='6'
-                     value={newResource.description}
-                     placeholder="Describe this resource in detail"
-                     onChange={this.onChange}
-                   />
-                   </FormGroup>
-                   <FormGroup
-                     controlId="service_region"
-                     validationState={this.getValidationState()}
-                   >
-                 <ControlLabel>Service Region </ControlLabel>
-                   <FormControl
-                     type="text"
-                     data-id='7'
-                     value={newResource.service_region}
-                     placeholder="Alameda County"
-                     onChange={this.onChange}
-                    />
+                   <ControlLabel>PhoneNumber</ControlLabel>
+                     <FormControl
+                       type="text"
+                       data-id='3'
+                       value={newResource.phone_number}
+                       placeholder="510-629-6644"
+                       onChange={this.onChange}
+                     />
                     </FormGroup>
-               <FormControl.Feedback/>
-
-             <Button type="submit">Create Resource</Button>
-           </form>
+                    <FormGroup
+                      controlId="website_url"
+                      validationState={this.getValidationState()}
+                    >
+                   <ControlLabel>Website Url</ControlLabel>
+                     <FormControl
+                       type="text"
+                       data-id='4'
+                       value={newResource.website_url}
+                       placeholder="www.dontcallthecops.com"
+                       onChange={this.onChange}
+                     />
+                     </FormGroup>
+                     <FormGroup
+                       controlId="zipcode"
+                       validationState={this.getValidationState()}
+                     >
+                   <ControlLabel>ZipCode</ControlLabel>
+                     <FormControl
+                       type="text"
+                       data-id='5'
+                       value={newResource.zipcode}
+                       placeholder="94619"
+                       onChange={this.onChange}
+                     />
+                     </FormGroup>
+                     <FormGroup
+                       controlId="description"
+                       validationState={this.getValidationState()}
+                     >
+                   <ControlLabel>Description</ControlLabel>
+                     <FormControl
+                       type="textArea"
+                       data-id='6'
+                       value={newResource.description}
+                       placeholder="Describe this resource in detail"
+                       onChange={this.onChange}
+                     />
+                     </FormGroup>
+                     <FormGroup
+                       controlId="service_region"
+                       validationState={this.getValidationState()}
+                     >
+                   <ControlLabel>Service Region </ControlLabel>
+                     <FormControl
+                       type="text"
+                       data-id='7'
+                       value={newResource.service_region}
+                       placeholder="Alameda County"
+                       onChange={this.onChange}
+                      />
+                      </FormGroup>
+                 <FormControl.Feedback/>
+              <div className={cx('create-resource-button-area')}>
+               <Button type="submit" className={cx('button')}>Create Resource</Button>
+              </div>
+             </form>
+          </div>
 
     </div>
   );
