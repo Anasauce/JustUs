@@ -50,12 +50,12 @@ const resources = (
 };
 
 const newResource = (
-  state = '',
+  state = {},
   action
 ) => {
   switch (action.type) {
     case types.TYPING:
-      return action.newResource;
+      return Object.assign({}, state, action.newResource)
     case types.CREATE_RESOURCE_REQUEST:
       return '';
     default:
