@@ -1,0 +1,33 @@
+@import '../common/typography';
+@import '../common/colors';
+@import '../common/layout';
+@import '../common/button';
+
+
+.entrybox {
+  font-family: var(--fontLato);
+}
+
+.resource_header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.formEntry {
+  font-family: var(--fontLato);
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 35px;
+  margin-left: 10px;
+}
+
+.create-resource-button-area {
+  text-align: center;
+}
+
+.button {
+  @apply --greenButton;
+}
