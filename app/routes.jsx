@@ -34,6 +34,8 @@ export default (store) => {
       <IndexRoute component={About} />
       <Route path="dashboard" component={Dashboard} fetchData={fetchVoteData} />
       <Route path="new_resource" component={Vote} fetchData={fetchVoteData} />
+      <Route path="new_review" component={Vote} fetchData={fetchVoteData} />
+
     </Route>
   );
 };

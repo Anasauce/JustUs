@@ -46,6 +46,9 @@
   font-size: var(--fontLato);
 }
 
+.button {
+  @apply --greenButton;
+}
 
 .destroy {
   background-color: var(--colorPunch);

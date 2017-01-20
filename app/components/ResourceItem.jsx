@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames/bind';
-import styles from 'css/components/resource-item';
-import { Jumbotron } from 'react-bootstrap'
+import styles from 'css/components/feed';
+import { Jumbotron, Button } from 'react-bootstrap'
 
 const cx = classNames.bind( styles );
 
@@ -15,7 +15,8 @@ const ResourceItem = ({
   description,
   website_url,
   address
-}) => { return (
+}) => {
+  return (
     <Jumbotron className={cx('resource_card')}>
       <div className={cx('resource_main_info')}>
         <h1 className={cx('resource_header')}>{ name }</h1>
@@ -27,6 +28,9 @@ const ResourceItem = ({
         <div>{ description }</div>
         <h3 className={cx('resource_website')}>Website:</h3>
         <div>{ website_url }</div>
+      </div>
+      <div>
+        <Button href="/:id/new_review/" className={cx('button')}>Add Review</Button>
       </div>
     </Jumbotron>
   );
